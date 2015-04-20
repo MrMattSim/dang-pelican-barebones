@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
+import re
+import os
 
 AUTHOR = u'charlesreid1'
 SITENAME = u'dang-pelican-barebones'
@@ -10,10 +12,15 @@ PATH = 'content'
 TIMEZONE = 'America/Los_Angeles'
 DEFAULT_LANG = u'en'
 
-# --------------8<---------------------
-# your stuff
-
+# the theme 
 THEME = 'simple-angular'
+
+# template locations 
+EXTRA_TEMPLATES_PATHS = ['angular']
+
+# template files 
+TEMPLATE_PAGES = {}
+#TEMPLATE_PAGES['hello1.html'] = 'hello1/index.html'
 
 # --------------8<---------------------
 
