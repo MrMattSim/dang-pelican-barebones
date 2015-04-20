@@ -1,3 +1,6 @@
 # Ignore pelican output directories
 pelican/cache
 pelican/output
+
+# Python
+*.pyc
