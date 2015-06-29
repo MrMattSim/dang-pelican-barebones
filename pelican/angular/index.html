@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% set mytitle="Hello" %}
+
+{# ----------- title -------------- #}
+
+{% block title %}{{ mytitle }}{% endblock %}
+
+{# ----------- content ------------- #}
+
+{% block content %}
+
+<ul>
+    <li><a href="hello/">Angular Hello World App</a></li>
+    <li><a href="draw/">D3 Ball-and-Stick Drawing</a></li>
+</ul>
+
+{% endblock %}
+

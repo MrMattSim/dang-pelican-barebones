@@ -20,7 +20,15 @@ EXTRA_TEMPLATES_PATHS = ['angular']
 
 # template files 
 TEMPLATE_PAGES = {}
-#TEMPLATE_PAGES['hello1.html'] = 'hello1/index.html'
+
+TEMPLATE_PAGES['index.html'] = 'index.html'
+
+TEMPLATE_PAGES['hello.html'] = 'hello/index.html'
+
+TEMPLATE_PAGES['draw.html'] = 'draw/index.html'
+TEMPLATE_PAGES['draw.css']  = 'draw/draw.css'
+TEMPLATE_PAGES['draw_modcontrol.js']   = 'draw/draw_modcontrol.js'
+TEMPLATE_PAGES['draw_ballandstick.js'] = 'draw/draw_ballandstick.js'
 
 # --------------8<---------------------
 
