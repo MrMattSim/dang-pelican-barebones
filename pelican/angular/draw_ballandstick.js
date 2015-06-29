@@ -1,6 +1,8 @@
 var ng;
 dir = [];
 
+
+
 ///////////////////////////////////////////////
 // Plain Sunburst Chart
 
@@ -39,60 +41,9 @@ ng = a.directive('drawing', function($compile) {
         var txt = $("div#drawing");
 
 
-        // --------------------------
-        // add display for details 
-        // about current mouseover selection
-        
-        // assemble the tags, 
-        // then compile the html
-        // select element of interest with angular.element
-        // and append the compiled tags
-        //
-        var br = $("<br />").appendTo(txt);
-
-
-        var panel = $("<div />", {
-                "class" : "panel panel-primary",
-                "id" : "selectedPointPanel"
-            });
-
-        var panelhead = $("<div />", {
-                "class" : "panel-heading"
-            }).appendTo(panel);
-        
-        var h3 = $("<h3 />", {
-                "class" : "panel-title"
-            }).text("Selected Arc")
-            .appendTo(panelhead);
-
-
-
-        var panelbody = $("<div />", {
-                "class" : "panel-body"
-            }).appendTo(panel);
-
-        var maindiv = $("<div />", {
-                /*"ng-show" : "selectedPoint"*/
-            }).appendTo(panelbody);
-
-        var h = $("<h3 />")
-            .html("Name: [[selectedPoint.name]]")
-            .appendTo(maindiv);
-
-        var p = $("<p />", {
-                "class" : "lead"
-            })
-            .html("Frequency: [[selectedPoint.freq | number:4]]")
-            .appendTo(maindiv);
-
-
-        angular.element(txt).prepend($compile(panel)(pscope));
-
-
-
 
         ///////////////////////////////////
-        // now draw the svg with d3
+        // draw the svg with d3
 
         // ---------------
         // the chart itself:
@@ -104,14 +55,19 @@ ng = a.directive('drawing', function($compile) {
             left:   40
         };
         
-        var width   = 400 - margin.right - margin.left,
-            height  = 400 - margin.top   - margin.bottom;
+        var w  = 400 - margin.right - margin.left,
+            h  = 400  - margin.top   - margin.bottom;
 
-        var svg = d3.select("div#drawing").append("svg")
+        var width=w, height=h;
+
+
+        var txt = $("div#mydraw");
+
+        //d3.select("div#drawing").append("svg")
+        var svg = d3.select("div#mydraw").append("svg")
             .attr("width", width)
             .attr("height", height)
-            .append("g")
-            .attr("transform", "translate(" + width / 2 + "," + (height / 2 + 10) + ")");
+            .append("g");
 
 
         // ---------------
@@ -137,10 +93,6 @@ ng = a.directive('drawing', function($compile) {
                 .attr("stroke-width", function(d) {
                     return d/2;
                 });
-
-
-
-
 
     }
 

@@ -13,19 +13,16 @@
     <div ng-controller="drawController" ng-init="initialize()">
         <div class="row">
             <div class="col-sm-12">
-                <!--
-                <drawing></drawing>
-                -->
-                <p>hi</p>
+                <div id="mydraw">
+                    <drawing></drawing>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
 <script type="text/javascript" src="{{ SITEURL }}/draw/draw_modcontrol.js"></script>
-<!--
 <script type="text/javascript" src="{{ SITEURL }}/draw/draw_ballandstick.js"></script>
--->
 
 {% endblock %}
 
