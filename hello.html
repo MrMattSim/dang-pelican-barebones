@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <title>Index</title>
+        <title>dang-pelican-barebones</title>
         <meta charset="utf-8" />
 
         <!--
@@ -25,21 +25,45 @@
         <h1><a href="dang-pelican-barebones/">dang-pelican-barebones <strong></strong></a></h1>
         <hr />
 
-    <p><br /></p>
-<p><a href='hello.html'>Angular Hello World App</a> - contained in <code>pelican/content/angular/hello.html</code></p>
 
-<p><br /></p>
-<p>Testing out embedding a tweet:</p>
+<div ng-app="myApp">
 
-<p><br /></p>
-<div style="align:right;"><blockquote class="twitter-tweet" lang="en"><p>Bean: Try to get it out of the center hatch window now, Houston. It really is beautiful. That mark looks just like a nose; about the same</p>&mdash; Apollo 12 Space Junk (@apollo12junk) <a href="https://twitter.com/apollo12junk/status/552697699582357504">January 7, 2015</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <div ng-controller="HelloController">
+        <p>
+        Angular has something to say: [[message]]
+        </p>
+    
+        <button class="btn btn-large btn-primary" ng-click="changeMessage()">
+          Change Message
+        </button>
+    
+    </div>
+
 </div>
 
-<p><br /></p>
-<blockquote class="twitter-tweet" lang="en"><p>Collins: That&#39;s where I am. The hatch is installed. How does the thruster firing activity look? [Garble].</p>&mdash; Apollo 11 Space Junk (@apollo11junk) <a href="https://twitter.com/apollo11junk/status/552671865572163584">January 7, 2015</a></blockquote>
 
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script type="text/javascript">
+
+(function() {
+
+    function HelloController($scope) {
+        $scope.message = "Hello Cruel Angular World!";
+
+        $scope.changeMessage = function() {
+            $scope.message = "Goodbye Cruel Angular World!";
+        };
+    };
+
+    var a = angular.module("myApp", [], function($interpolateProvider) {
+                $interpolateProvider.startSymbol('[[');
+                $interpolateProvider.endSymbol(']]');
+            }
+        );
+    var c = a.controller("HelloController", ["$scope", HelloController]);
+
+})();
+
+</script>
     </div>
 
     <footer id="contentinfo" class="body">
