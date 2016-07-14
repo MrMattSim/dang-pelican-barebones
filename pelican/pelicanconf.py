@@ -6,7 +6,12 @@ import os
 
 AUTHOR = u'charlesreid1'
 SITENAME = u'dang-pelican-barebones'
-SITEURL = ''
+
+# If you are running pelican and hosting locally,
+#SITEURL = ''
+
+# Otherwise, if you're making content for Github Pages,
+SITEURL='/dang-pelican-barebones'
 
 PATH = 'content'
 TIMEZONE = 'America/Los_Angeles'
@@ -18,9 +23,14 @@ THEME = 'simple-angular'
 # template locations 
 EXTRA_TEMPLATES_PATHS = ['angular']
 
+
 # template files 
-TEMPLATE_PAGES = {}
-#TEMPLATE_PAGES['hello1.html'] = 'hello1/index.html'
+TEMPLATE_PAGES = {'hello.html':'hello.html'}
+
+
+
+# Don't try to turn HTML files into pages
+READERS = {'html': None}
 
 # --------------8<---------------------
 
@@ -35,3 +45,4 @@ DEFAULT_PAGINATION = False
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
+RELATIVE_URLS = False
