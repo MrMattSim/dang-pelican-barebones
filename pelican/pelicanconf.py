@@ -11,7 +11,8 @@ SITENAME = u'dang-pelican-barebones'
 #SITEURL = ''
 
 # Otherwise, if you're making content for Github Pages,
-SITEURL='/dang-pelican-barebones'
+#SITEURL='/dang-pelican-barebones'
+SITEURL=''
 
 PATH = 'content'
 TIMEZONE = 'America/Los_Angeles'
